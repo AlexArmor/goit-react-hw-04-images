@@ -16,14 +16,6 @@ export const Modal = ({ onImageClick, largeImageURL, alt }) => {
     };
   }, [onImageClick]);
 
-  // componentDidMount() {
-  //   window.addEventListener('keydown', this.handleKeyDown);
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener('keydown', this.handleKeyDown);
-  // }
-
   const handleBackdrop = event => {
     if (event.target === event.currentTarget) {
       onImageClick('');
