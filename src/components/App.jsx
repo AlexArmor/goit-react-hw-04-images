@@ -36,42 +36,6 @@ export const App = () => {
         setIsLoading(false);
       });
   }, [query, page, error]);
-  // state = {
-  //   query: '',
-  //   images: [],
-  //   largeImageURL: '',
-  //   page: 1,
-  //   isLoading: false,
-  //   showBtn: false,
-  //   isEmpty: false,
-  //   error: null,
-  // };
-
-  // componentDidUpdate(_, prevState) {
-  //   if (
-  //     prevState.query !== this.state.query ||
-  //     prevState.page !== this.state.page
-  //   ) {
-  //     setIsLoading(true);
-  //     getImages(query, page)
-  //       .then(({ hits, totalHits }) => {
-  //         if (hits.length === 0) {
-  //           setIsEmpty(true);
-  //           return;
-  //         }
-  //         this.setState(prevState => ({
-  //           images: [...prevState.images, ...hits],
-  //           showBtn: Math.ceil(totalHits / 12) > this.state.page,
-  //         }));
-  //       })
-  //       .catch(error =>
-  //         setError(error.message)
-  //       )
-  //       .finally(() => {
-  //         setIsLoading(false);
-  //       });
-  //   }
-  // }
 
   const onFormSubmit = query => {
     setQuery(query);
