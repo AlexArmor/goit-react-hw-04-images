@@ -35,7 +35,7 @@ export const App = () => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [query, page, error]);
+  }, [query, page]);
 
   const onFormSubmit = query => {
     setQuery(query);
@@ -45,6 +45,7 @@ export const App = () => {
     setIsLoading(false);
     setShowBtn(false);
     setIsEmpty(false);
+    setError(null);
   };
 
   const handleClick = () => {
@@ -59,6 +60,7 @@ export const App = () => {
     <>
       <Searchbar onFormSubmit={onFormSubmit} btnText="Search" />
       {isLoading && <Loader />}
+      {error && <Attention>Виникла помилка запиту</Attention>}
       {isEmpty ? (
         <Attention>Нема чого дивитись</Attention>
       ) : (
