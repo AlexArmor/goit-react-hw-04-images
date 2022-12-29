@@ -28,15 +28,14 @@ export const App = () => {
           setIsEmpty(true);
           return;
         }
-        setImages(prevState => [...prevState.images, ...hits]),
-          setShowBtn(Math.ceil(totalHits / 12) > page),
-        }));
+        setImages(prevState => [...prevState, ...hits]);
+        setShowBtn(Math.ceil(totalHits / 12) > page);
       })
       .catch(error => setError(error.message))
       .finally(() => {
         setIsLoading(false);
       });
-  }, [query, page]);
+  }, [query, page, error]);
   // state = {
   //   query: '',
   //   images: [],
@@ -77,7 +76,7 @@ export const App = () => {
   const onFormSubmit = query => {
     setQuery(query);
     setImages([]);
-    largeImageURL('');
+    setLargeImageURL('');
     setPage(1);
     setIsLoading(false);
     setShowBtn(false);
